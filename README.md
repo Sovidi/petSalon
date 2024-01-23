@@ -1,6 +1,7 @@
 # petSalon
 
-![chrome-capture-2024-1-23](https://github.com/Sovidi/petSalon/assets/133857264/94885eb3-21fd-47e0-86f8-75bbf10f0132)
+![chrome-capture-2024-1-23](https://github.com/Sovidi/petSalon/assets/133857264/3c42d08a-cf81-436c-9443-2179e3c12f5e)
+
 
 
 ### 소개
