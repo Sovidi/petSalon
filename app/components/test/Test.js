@@ -2,6 +2,7 @@
 import axios, { Axios } from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
 import { myContext } from '../Context';
+import styles from "./test.module.scss"
 
 function Test() {
 	const { memberLd, profView, member, favoriteLd, Fav } = useContext(myContext);
@@ -24,11 +25,9 @@ function Test() {
 	}//kakaoLogout() 함수정의
 
 	const kakaoLogin = () => {
-
 		if (!Kakao.isInitialized()) {//초기화(init)이 되있는지 여부에 따라 true, false
 			Kakao.init('a9eac40c80c43a51d4280e2f8cbd816f') //초기화는 한 번만 //이미 된 상태에서 또 하면 오류라서 이렇게 함
 		}
-
 		//발급받은 키 중 javascript키를 사용해준다.
 		Kakao.Auth.login({
 			success: function (response) {
@@ -37,14 +36,12 @@ function Test() {
 					success: async function (response) {
 						kakaoLogout();
 						console.log(response)
-
 					},//success: async function (response)
 					fail: function (error) {
 						console.log(error);
 					},
 				})//Kakao.API.request
 			},//success(response)
-
 			fail: function (error) {
 				console.log(error);
 			},//fail(error)
@@ -63,7 +60,7 @@ function Test() {
 	useEffect(() => {
 		memberLd();
 		favoriteLd();
-		kakaoLogin();
+		// kakaoLogin();
 	}, []);
 
 	useEffect(() => {
@@ -135,6 +132,20 @@ function Test() {
 					</>
 				))
 			}
+			<p className={styles.tdTest}>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+				<span className={styles.boxes}></span>
+			</p>
 		</section>
 	)
 }
