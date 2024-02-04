@@ -62,7 +62,7 @@ function Mypage() {
               } else {
                 setData(res.data);
               }
-                });
+            });
         };
       }
     } else {

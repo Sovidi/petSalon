@@ -1,14 +1,16 @@
 .mypageSec {
 
-	button{
-		background-color: rgb(212, 212, 212);
-		cursor: pointer;
-	}
 	&.active{display: none;}
 	box-shadow: 0px 0px 20px rgb(218, 218, 218);
 	background-color: #FFFAED;
 	padding: 8% 5% 8% 5%;
+	button{
+		background-color: rgb(212, 212, 212);
+		cursor: pointer;
+	}
+
 	>.profile {
+		width: 100%;
 		>.title {
 			display: flex;
 			justify-content: space-between;
@@ -191,6 +193,7 @@
 	}
 
 	>.workpics{
+		width: 100%;
 		margin: 130px 0 0 0;
 		>.title{
 			margin: 0 0 50px 0;
@@ -302,11 +305,11 @@
 						}
 				}
 			}
-
 		}
 	}
 
 	>.info{
+		width: 100%;
 		position: relative;
 		margin: 130px 0 0 0;
 		>.title{
@@ -370,13 +373,14 @@
 				}
 				>.hpBox{
 					display: flex;
-					justify-content: space-between;
+					justify-content: start;
 					align-items: center;
 					>input{
 						padding: 3px;
 						border: 1px solid #797979;
 						border-radius: 8px;
-						margin-top: 11px;
+						margin: 11px 5px 0 0;
+						width: 32%;
 					}
 				}
 				>textarea{
