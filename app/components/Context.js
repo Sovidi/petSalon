@@ -63,17 +63,13 @@ function Context({children}) {
             }
         );
     }
-
 }
-
-
 
   const alertBoard = (txt = '') => {
 		Swal.fire({
 		  text: txt,
 		  confirmButtonColor: '#FF8500',
 		  confirmButtonText: '확인',
-      
 		})
 	}//alertBoard() 함수정의
 

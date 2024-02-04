@@ -48,8 +48,6 @@ function Test() {
 		})
 	}//kakaoLoginBtn() 함수정의
 
-
-
 	const making = async () => {
 		const l2 = member.filter(obj => {
 			return (Fav.some(item => item.objKey == obj.key));
@@ -60,7 +58,7 @@ function Test() {
 	useEffect(() => {
 		memberLd();
 		favoriteLd();
-		// kakaoLogin();
+		kakaoLogin();
 	}, []);
 
 	useEffect(() => {

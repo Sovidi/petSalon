@@ -215,12 +215,10 @@ function Detail() {
 		script.async = true;
 		script.integrity = "sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8";
 		script.crossOrigin = "anonymous";
-
 		document.body.appendChild(script);
 
 		script.onload = () => {
 			Kakao.init(kakaoApiKey); // 사용하려는 앱의 JavaScript 키 입력
-
 		};
 
 		return () => {
@@ -242,28 +240,21 @@ function Detail() {
 					center: new window.kakao.maps.LatLng(detailItem[0].lat, detailItem[0].lng),
 					level: 3,
 				};
-
 				const map = new window.kakao.maps.Map(container, options);
 
 				const markerPosition = new window.kakao.maps.LatLng(detailItem[0].lat, detailItem[0].lng);
 				const marker = new window.kakao.maps.Marker({
 					position: markerPosition,
 				});
-
 				marker.setMap(map);
-
 
 				const iwContent = `<div style="padding:5px;">${detailItem[0].nickname}<br><a href="https://map.kakao.com/link/to/${detailItem[0].nickname},${detailItem[0].lat},${detailItem[0].lng}" style="color:blue" target="_blank">길찾기</a></div>`;
 				const iwPosition = new window.kakao.maps.LatLng(detailItem[0].lat, detailItem[0].lng);
-
-
 				const infowindow = new window.kakao.maps.InfoWindow({
 					position: iwPosition,
 					content: iwContent,
 				});
-
 				infowindow.open(map, marker);
-
 			})
 		}
 	}
