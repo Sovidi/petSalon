@@ -15,6 +15,7 @@ function Login() {
     const detailLink = paramsData.get("detailNum");
     const elPwInput = useRef();
     const [type, setType] = useState('password');
+    
     const kakaoLogout = () => {
         if(Kakao.Auth.getAccessToken()) {
             Kakao.API.request({
@@ -60,6 +61,7 @@ function Login() {
         }
       })
     }//loginFn(e) 함수정의
+
     const kakaoLoginBtn = () => {
         
       if(!Kakao.isInitialized()) {//초기화(init)이 되있는지 여부에 따라 true, false

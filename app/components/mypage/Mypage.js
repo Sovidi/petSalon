@@ -71,7 +71,6 @@ function Mypage() {
     setMode("list");
   }
 
-
   const portPicUpload = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
