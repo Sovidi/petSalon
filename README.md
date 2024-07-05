@@ -34,7 +34,7 @@
 ### 플러그인
 - MySQL
 - MongoDB
-- KakapMap
+- Kakao Restful API
 - Swiper
 - CloudType
 
