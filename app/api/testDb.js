@@ -1,11 +1,22 @@
 import { MongoClient } from "mongodb";
 
-export default async (str) => {
-    const client2 = new MongoClient("mongodb+srv://lim132445:zCnCDyeTGM7toUhV@sovidi.v53i9gi.mongodb.net/?retryWrites=true&w=majority");
-    await client2.connect();
-    const db = client2.db("toGrocery");
-    const collection2 = db.collection(str);
-    console.log("MongoDB2 접속성공");
+const client2 = new MongoClient(process.env.S_HOST);
+let connectSafer = true;
 
-    return {client2, collection2};
+export default async (str) => {
+  if (connectSafer) {
+    try {
+      await client2.connect();
+      connectSafer = false;
+      console.log("MongoDB connect 신규 연결함");
+    } catch (err) {
+      console.error("MongoDB connect 실패:", err.message);
+      throw err;
+    }
+  } else {
+    console.log("MongoDB connect 이미 연결됨(연결회피)");
+  }
+
+  const db = client2.db("petsalon");
+  return { client2, collection2: db.collection(str) };
 };
